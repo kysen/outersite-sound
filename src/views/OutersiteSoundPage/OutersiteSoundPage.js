@@ -12,29 +12,29 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // core components
 
-import Header from "components/Header/Header.js";
+// import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 // import Button from "components/CustomButtons/Button.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
+// import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import styles from "assets/jss/material-kit-react/views/landingPage.js";
+import styles from "assets/jss/material-kit-react/views/outersiteSoundPage.js";
 
 // Sections for this page
 
 // import ProductSection from "./Sections/ProductSection.js";
-import TeamSection from "./Sections/TeamSection.js";
+import MeetTheBands from "./Sections/MeetTheBands.js";
 // import WorkSection from "./Sections/WorkSection.js";
 
-const dashboardRoutes = [];
+// const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function LandingPage(props) {
+export default function OutersiteSoundPage(props) {
   const classes = useStyles();
-  const { ...rest } = props;
+  // const { ...rest } = props;
   return (
     <div>
       {/* <Header
@@ -80,7 +80,7 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           {/* <ProductSection /> */}
-          <TeamSection />
+          <MeetTheBands />
           {/* <WorkSection /> */}
         </div>
       </div>

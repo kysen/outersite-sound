@@ -51,7 +51,12 @@ const profilePageStyle = {
     height: "100%",
     lineHeight: "41px",
     fontSize: "20px",
-    color: "#999"
+    color: "#999",
+    cursor: "poiner",
+    transition: ".3s ease-in-out",
+    "&:hover": {
+      color: "blue"
+    }
   },
   navWrapper: {
     margin: "20px auto 50px auto",

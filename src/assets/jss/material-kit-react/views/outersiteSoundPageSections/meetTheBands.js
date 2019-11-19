@@ -14,6 +14,14 @@ const teamStyle = {
     textDecoration: "none"
   },
   ...imagesStyle,
+  gridItem: {
+    transition: ".3s ease-in-out",
+    cursor: "pointer",
+    borderRadius: "5px",
+    "&:hover": {
+      boxShadow: "5px 5px 12px black"
+    }
+  },
   itemGrid: {
     marginLeft: "auto",
     marginRight: "auto"
@@ -23,7 +31,8 @@ const teamStyle = {
     color: "#6c757d"
   },
   description: {
-    color: "#999"
+    color: "#999",
+    fontSize: "1.3em"
   },
   justifyCenter: {
     justifyContent: "center !important"
@@ -35,12 +44,17 @@ const teamStyle = {
     left: "0",
     top: "0",
     height: "100%",
-    lineHeight: "41px",
-    fontSize: "20px",
-    color: "#999"
+    lineHeight: "80px",
+    fontSize: "80px",
+    color: "#999",
+    transition: ".3s ease-in-out",
+    "&:hover": {
+      color: "blue"
+    }
   },
   margin5: {
-    margin: "5px"
+    margin: "5px",
+    padding: "none"
   }
 };
 
