@@ -34,7 +34,7 @@ import profile from "assets/img/outerSite/zenith/zenith-round-logo.jpg";
 
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
-import ProfComp from "./profiles-component/prof-component";
+import ZenithBandMembers from "./ZenithSections/ZenithBandMembers";
 
 const useStyles = makeStyles(styles);
 
@@ -65,12 +65,6 @@ export default function ZenithPage(props) {
                   <div className={classes.name}>
                     <h3 className={classes.title}>Zenith</h3>
                     <h6>Cover Band</h6>
-                    {/* <Button justIcon link className={classes.margin5}>
-                      <i className={"fab fa-twitter"} />
-                    </Button>
-                    <Button justIcon link className={classes.margin5}>
-                      <i className={"fab fa-instagram"} />
-                    </Button> */}
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-facebook " + classes.socials} />
                     </Button>
@@ -85,9 +79,14 @@ export default function ZenithPage(props) {
                 also the Drummer, said he named it because the songs we perform
                 were in the Zenith time period from which they originate.{" "}
               </p>
+              <p>
+                Their retake on the songs they pick to perform catch your
+                listening ear. You will enjoy this band. They love to play and
+                it shows
+              </p>
             </div>
 
-            <ProfComp />
+            <ZenithBandMembers />
 
             {/* <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>

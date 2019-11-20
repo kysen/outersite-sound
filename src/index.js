@@ -11,7 +11,7 @@ import OutersiteSoundPage from "views/OutersiteSoundPage/OutersiteSoundPage.js";
 // import ProfilePage from "views/ProfilePage/ProfilePage.js";
 // import LoginPage from "views/LoginPage/LoginPage.js";
 
-import ZenithPage from "views/Bands/ZenithPage.js";
+import ZenithPage from "views/Bands/ZenithPage/ZenithPage.js";
 
 var hist = createBrowserHistory();
 

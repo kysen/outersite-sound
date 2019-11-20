@@ -16,6 +16,14 @@ const teamStyle = {
   ...imagesStyle,
   gridItem: {
     transition: ".3s ease-in-out",
+    // cursor: "pointer",
+    borderRadius: "5px"
+    // "&:hover": {
+    //   boxShadow: "5px 5px 12px black"
+    // }
+  },
+  gridItemShadowed: {
+    transition: ".3s ease-in-out",
     cursor: "pointer",
     borderRadius: "5px",
     "&:hover": {

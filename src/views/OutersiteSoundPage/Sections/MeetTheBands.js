@@ -40,7 +40,7 @@ export default function MeetTheBands() {
       <h2 className={classes.title}>Meet the Bands!</h2>
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={6} className={classes.gridItem}>
+          <GridItem xs={12} sm={12} md={6} className={classes.gridItemShadowed}>
             <Link to="zenith-page">
               <Card plain>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
@@ -77,7 +77,7 @@ export default function MeetTheBands() {
               </Card>
             </Link>
           </GridItem>
-          <GridItem xs={12} sm={12} md={6} className={classes.gridItem}>
+          <GridItem xs={12} sm={12} md={6} className={classes.gridItemShadowed}>
             <Link>
               <Card plain>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
