@@ -47,6 +47,9 @@ export default function ZenithPage(props) {
     classes.imgFluid
   );
   // const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+  const handleLinkClick = link => {
+    window.location.href = link;
+  };
   return (
     <div>
       <Parallax
@@ -65,8 +68,17 @@ export default function ZenithPage(props) {
                   <div className={classes.name}>
                     <h3 className={classes.title}>Zenith</h3>
                     <h6>Cover Band</h6>
-                    <Button justIcon link className={classes.margin5}>
-                      <i className={"fab fa-facebook " + classes.socials} />
+                    <Button
+                      justIcon
+                      color="transparent"
+                      className={classes.margin5}
+                      onClick={() =>
+                        handleLinkClick(
+                          "https://www.facebook.com/profile.php?id=100011745003253"
+                        )
+                      }
+                    >
+                      <i className={classes.socials + " fab fa-facebook-f"} />
                     </Button>
                   </div>
                 </div>

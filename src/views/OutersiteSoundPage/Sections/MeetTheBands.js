@@ -61,7 +61,7 @@ export default function MeetTheBands() {
                   </p>
                 </CardBody>
                 <CardFooter className={classes.justifyCenter}>
-                  <Button
+                  {/* <Button
                     justIcon
                     color="transparent"
                     className={classes.margin5}
@@ -72,7 +72,7 @@ export default function MeetTheBands() {
                     }
                   >
                     <i className={classes.socials + " fab fa-facebook-f"} />
-                  </Button>
+                  </Button> */}
                 </CardFooter>
               </Card>
             </Link>
