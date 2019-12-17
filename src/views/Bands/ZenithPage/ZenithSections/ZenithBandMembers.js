@@ -1,22 +1,9 @@
 import React from "react";
-// nodejs library that concatenates classes
 import classNames from "classnames";
-// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
-// @material-ui/icons
-
-// import { Link } from "react-router-dom";
-
-// core components
 import GridContainer from "components/Grid/GridContainer.js";
-
 import styles from "assets/jss/material-kit-react/views/outersiteSoundPageSections/meetTheBands.js";
-
-// import team1 from "assets/img/faces/avatar.jpg";
 import team2 from "assets/img/outerSite/moose-canoe/stage-frontal.jpg";
-// import team3 from "assets/img/outerSite/zenith/fam-pic.jpg";
-
 import BandMember from "views/Bands/ZenithPage/ZenithSections/BandMember.js";
 
 const useStyles = makeStyles(styles);
