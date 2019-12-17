@@ -13,6 +13,7 @@ import profile from "assets/img/outerSite/zenith/zenith-round-logo.jpg";
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
 import ZenithBandMembers from "./ZenithSections/ZenithBandMembers";
+import VideoSection from "./ZenithSections/VideoSection";
 
 const useStyles = makeStyles(styles);
 
@@ -24,7 +25,7 @@ export default function ZenithPage(props) {
     classes.imgFluid
   );
   const handleLinkClick = link => {
-    window.location.href = link;
+    window.open(link, "_blank");
   };
   return (
     <div>
@@ -74,6 +75,7 @@ export default function ZenithPage(props) {
               </p>
             </div>
             <ZenithBandMembers />
+            <VideoSection />
           </div>
         </div>
       </div>
