@@ -9,7 +9,7 @@ import eddie from "assets/img/outerSite/zenith/band-members/eddie-cuellar.jpg";
 import ted from "assets/img/outerSite/zenith/band-members/ted.png";
 import jan from "assets/img/outerSite/zenith/band-members/jan.jpg";
 
-import BandMember from "views/Bands/ZenithPage/ZenithSections/BandMember.js";
+import BandMember from "myComponents/BandMember.js";
 
 const useStyles = makeStyles(styles);
 

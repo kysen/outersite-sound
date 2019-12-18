@@ -13,7 +13,7 @@ import profile from "assets/img/outerSite/zenith/zenith-round-logo.jpg";
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
 import ZenithBandMembers from "./ZenithSections/ZenithBandMembers";
-import VideoSection from "./ZenithSections/VideoSection";
+import VideoSection from "../../../myComponents/VideoSection";
 
 const useStyles = makeStyles(styles);
 
