@@ -7,13 +7,15 @@ import "assets/scss/material-kit-react.scss?v=1.8.0";
 
 import OutersiteSoundPage from "views/OutersiteSoundPage/OutersiteSoundPage.js";
 import ZenithPage from "views/Bands/ZenithPage/ZenithPage.js";
+import MooseCanoePage from "views/Bands/MooseCanoePage/MooseCanoePage.js";
 
 var hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      <Route path="/zenith-page" component={ZenithPage} />
+      <Route path="/zenith" component={ZenithPage} />
+      <Route path="/moose-canoe" component={MooseCanoePage} />
       <Route path="/" component={OutersiteSoundPage} />
     </Switch>
   </Router>,

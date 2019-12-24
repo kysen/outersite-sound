@@ -35,7 +35,7 @@ export default function MeetTheBands() {
       <div>
         <GridContainer>
           <GridItem xs={12} sm={12} md={6} className={classes.gridItemShadowed}>
-            <Link to="zenith-page">
+            <Link to="zenith">
               <Card plain>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                   <img src={team3} alt="..." className={imageClasses} />
@@ -59,7 +59,7 @@ export default function MeetTheBands() {
             </Link>
           </GridItem>
           <GridItem xs={12} sm={12} md={6} className={classes.gridItemShadowed}>
-            <Link>
+            <Link to="moose-canoe">
               <Card plain>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                   <img src={team2} alt="..." className={imageClasses} />

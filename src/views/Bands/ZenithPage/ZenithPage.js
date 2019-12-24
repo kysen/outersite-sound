@@ -15,9 +15,16 @@ import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import ZenithBandMembers from "./ZenithSections/ZenithBandMembers";
 import VideoSection from "../../../myComponents/VideoSection";
 
+// band members images:
+import damek from "assets/img/outerSite/zenith/band-members/damek.jpg";
+import eddie from "assets/img/outerSite/zenith/band-members/eddie-cuellar.jpg";
+import ted from "assets/img/outerSite/zenith/band-members/ted.png";
+import jan from "assets/img/outerSite/zenith/band-members/jan.jpg";
+
 const useStyles = makeStyles(styles);
 
-export default function ZenithPage(props) {
+
+export default function ZenithPage() {
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,
@@ -74,7 +81,21 @@ export default function ZenithPage(props) {
                 it shows
               </p>
             </div>
-            <ZenithBandMembers />
+            {/* TODO */}
+            <ZenithBandMembers 
+              image1={jan}
+              member1="Janette"
+              description1="On Vocals has a feel to bring the classic songs back to life. Loves to play Guitar and Keyboards."
+              image2={ted}
+              member2="Ted"
+              description2="plays Guitar and Vocals brings the band together with his energy."
+              image3={eddie}
+              member3="Eddie Cuellar"
+              description3="is impeccable on the Bass and Keyboards."
+              image4={damek}
+              member4="Damek"
+              description4="is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
+            />
             <VideoSection />
           </div>
         </div>
