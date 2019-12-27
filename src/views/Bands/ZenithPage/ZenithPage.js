@@ -8,9 +8,11 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import profile from "assets/img/outerSite/zenith/zenith-round-logo.jpg";
+import { container, title } from "assets/jss/material-kit-react.js";
 
-import styles from "assets/jss/material-kit-react/views/profilePage.js";
+import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
+
+import profile from "assets/img/outerSite/zenith/zenith-round-logo.jpg";
 
 import ZenithBandMembers from "./ZenithSections/ZenithBandMembers";
 import VideoSection from "../../../myComponents/VideoSection";
@@ -21,8 +23,72 @@ import eddie from "assets/img/outerSite/zenith/band-members/eddie-cuellar.jpg";
 import ted from "assets/img/outerSite/zenith/band-members/ted.png";
 import jan from "assets/img/outerSite/zenith/band-members/jan.jpg";
 
-const useStyles = makeStyles(styles);
-
+const useStyles = makeStyles({
+  container,
+  profile: {
+    textAlign: "center",
+    "& img": {
+      maxWidth: "160px",
+      width: "100%",
+      margin: "0 auto",
+      transform: "translate3d(0, -50%, 0)"
+    }
+  },
+  description: {
+    margin: "1.071rem auto 0",
+    maxWidth: "600px",
+    color: "#999",
+    textAlign: "center !important"
+  },
+  paragraph: {
+    fontSize: "20px",
+    padding: "0px 0px 20px 0px",
+    color: "black"
+  },
+  name: {
+    marginTop: "-80px"
+  },
+  ...imagesStyle,
+  main: {
+    background: "#FFFFFF",
+    position: "relative",
+    zIndex: "3"
+  },
+  mainRaised: {
+    margin: "-60px 30px 0px",
+    borderRadius: "6px",
+    boxShadow:
+      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
+  },
+  title: {
+    ...title,
+    display: "inline-block",
+    position: "relative",
+    marginTop: "30px",
+    minHeight: "32px",
+    textDecoration: "none"
+  },
+  socials: {
+    marginTop: "0",
+    width: "100%",
+    transform: "none",
+    left: "0",
+    top: "0",
+    height: "100%",
+    lineHeight: "41px",
+    fontSize: "20px",
+    color: "#999",
+    cursor: "poiner",
+    transition: ".3s ease-in-out",
+    "&:hover": {
+      color: "blue"
+    }
+  },
+  navWrapper: {
+    margin: "20px auto 50px auto",
+    textAlign: "center"
+  }
+});
 
 export default function ZenithPage() {
   const classes = useStyles();
@@ -34,6 +100,12 @@ export default function ZenithPage() {
   const handleLinkClick = link => {
     window.open(link, "_blank");
   };
+  const urls = [
+    {
+      url: "https://www.youtube.com/watch?v=ClB-JQKM6So",
+      description: "Zenith performing White Rabbit"
+    }
+  ];
   return (
     <div>
       <Parallax
@@ -69,20 +141,20 @@ export default function ZenithPage() {
               </GridItem>
             </GridContainer>
             <div className={classes.description}>
-              <p>
+              <p className={classes.paragraph}>
                 Zenith is a combination of generations brought together in the
                 name of Classical Rock. Jeff Case the originator of Zenith and
                 also the Drummer, said he named it because the songs we perform
                 were in the Zenith time period from which they originate.{" "}
               </p>
-              <p>
+              <p className={classes.paragraph}>
                 Their retake on the songs they pick to perform catch your
                 listening ear. You will enjoy this band. They love to play and
                 it shows
               </p>
             </div>
             {/* TODO */}
-            <ZenithBandMembers 
+            <ZenithBandMembers
               image1={jan}
               member1="Janette"
               description1="On Vocals has a feel to bring the classic songs back to life. Loves to play Guitar and Keyboards."
@@ -96,7 +168,7 @@ export default function ZenithPage() {
               member4="Damek"
               description4="is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
             />
-            <VideoSection />
+            <VideoSection urls={urls} />
           </div>
         </div>
       </div>

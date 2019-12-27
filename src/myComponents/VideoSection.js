@@ -24,61 +24,29 @@ const teamStyle = {
   ...imagesStyle,
   gridItem: {
     width: "100%",
-    height: "auto",
-    position: "relative"
-  }, 
-  // video: {
-  //   position: "relative",
-  // }, 
-  // vidSubtitle: {
-  //   position: "relative"
-  // }
+    height: "100%",
+    padding: "50px 0px"
+  },
+  video: {
+    height: "100%"
+  },
+  vidSubtitle: {
+    padding: "20px",
+    fontSize: "25px"
+  }
 };
 const useStyles = makeStyles(teamStyle);
 
-export default function VideoSection() {
+export default function VideoSection(props) {
   const classes = useStyles();
 
-  const urls = [
-    // {
-    //   url:
-    //     "https://www.facebook.com/553088384/videos/10156696984013385/UzpfSTE2Njc4NTc4NzQ6MTAyMTc5OTQ4OTY0OTg0ODc/",
-    //   description: "hi"
-    // },
-    {
-      url:
-        "https://www.facebook.com/zeniththerockband/videos/2024299227894351/UzpfSTE2Njc4NTc4NzQ6MTAyMTQyMDY4Mzk3MTk0MzU/",
-      description: "Zenith performing White Rabbit"
-    },
-    {
-      url:
-        "https://www.facebook.com/553088384/videos/pcb.10157643986588385/10157643908563385/?type=3&theater",
-      description: " Rhiannon – Moose Canoe White City Days"
-    },
-    // {
-    //   url:
-    // "https://www.facebook.com/Mrs.SierraFoulks1017/videos/pcb.10209058607256734/10209058575535941/?type=3&theater",
-    // description: "Zenith performing White Rabbit"
-    // },
-    // {
-    //   url:
-    // "https://www.facebook.com/Mrs.SierraFoulks1017/videos/pcb.10209058607256734/10209058591336336/?type=3&theater",
-    // description: "Zenith performing White Rabbit"
-    // },
-    // {
-    //   url:
-    // "https://www.facebook.com/krystle.elliott1/videos/pcb.1516086365123644/1516083395123941/?type=3&theater",
-    // description: "Zenith performing White Rabbit"
-    // },
-   ];
-
   const displayVideos = () => {
-    return urls.map((current, id) => {
+    return props.urls.map((current, id) => {
       return (
         <GridItem xs={12} key={id} className={classes.gridItem}>
-        <GridItem xs={12}  className={classes.video}>
-          <ReactPlayer url={current.url} width="100%" height="100%" />
-        </GridItem>
+          <GridItem xs={12} className={classes.video}>
+            <ReactPlayer url={current.url} width="100%" height="30vw" />
+          </GridItem>
           <div className={classes.vidSubtitle}>{current.description}</div>
         </GridItem>
       );
@@ -86,7 +54,7 @@ export default function VideoSection() {
   };
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>Past Work</h2>
+      <h2 className={classes.title}>Past Gigs</h2>
       {/* add videos here */}
 
       <GridContainer justify="center">{displayVideos()}</GridContainer>
