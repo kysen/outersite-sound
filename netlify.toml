@@ -2,8 +2,4 @@
   from = "/*"
   to = "/index.html"
   status = 200
-[[redirects]]
-  from = "https://outersitesound.netlify.com/*"
-  to = "https://www.outersitesound.com/:splat"
-  status = 301
-  force = true
+
