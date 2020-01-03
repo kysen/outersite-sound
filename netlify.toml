@@ -3,5 +3,5 @@
   to = "/index.html"
   status = 200
 [[redirects]]
-  from = https://outersitesound.netlify.com/* 
-  to = https://www.outersitesound.com/:splat 301!
+  from = "https://outersitesound.netlify.com/*"
+  to = "https://www.outersitesound.com/:splat 301!"
