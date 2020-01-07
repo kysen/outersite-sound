@@ -47,9 +47,10 @@ const useStyles = makeStyles({
     textAlign: "center !important"
   },
   paragraph: {
-    fontSize: "20px",
+    fontSize: "30px",
     padding: "0px 0px 20px 0px",
-    color: "black"
+    color: "black",
+    lineHeight: 1.3
   },
   name: {
     marginTop: "-80px"
@@ -82,7 +83,7 @@ const useStyles = makeStyles({
     top: "0",
     height: "100%",
     lineHeight: "41px",
-    fontSize: "20px",
+    fontSize: "50px",
     color: "#999",
     cursor: "poiner",
     transition: ".3s ease-in-out",
