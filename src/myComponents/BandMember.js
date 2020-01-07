@@ -8,7 +8,7 @@ import GridItem from "components/Grid/GridItem.js";
 
 const BandMember = props => {
   return (
-    <GridItem xs={12} sm={6} md={3} className={props.classes.gridItem}>
+    <GridItem xs={12} sm={6} md={4} className={props.classes.gridItem}>
       <Card plain>
         <GridItem xs={12} sm={12} md={12} className={props.classes.itemGrid}>
           <img src={props.image} alt="..." className={props.imageClasses} />
