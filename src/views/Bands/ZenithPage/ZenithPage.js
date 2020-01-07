@@ -84,6 +84,22 @@ const useStyles = makeStyles({
       color: "blue"
     }
   },
+  emails: {
+    marginTop: "0",
+    width: "100%",
+    transform: "none",
+    left: "0",
+    top: "0",
+    height: "100%",
+    lineHeight: "41px",
+    fontSize: "20px",
+    color: "#999",
+    cursor: "poiner",
+    transition: ".3s ease-in-out",
+    "&:hover": {
+      color: "red"
+    }
+  },
   navWrapper: {
     margin: "20px auto 50px auto",
     textAlign: "center"
@@ -124,6 +140,7 @@ export default function ZenithPage() {
                   <div className={classes.name}>
                     <h3 className={classes.title}>Zenith</h3>
                     <h6>Cover Band</h6>
+                    <h6>Do Originals</h6>
                     <Button
                       justIcon
                       color="transparent"
@@ -135,6 +152,15 @@ export default function ZenithPage() {
                       }
                     >
                       <i className={classes.socials + " fab fa-facebook-f"} />
+                    </Button>
+                    <Button
+                      justIcon
+                      color="transparent"
+                      className={classes.margin5}
+                    >
+                      <a href={"mailto:kysenj@gmail.com"}>
+                        <i className={classes.emails + " far fa-envelope"} />
+                      </a>
                     </Button>
                   </div>
                 </div>

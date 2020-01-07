@@ -14,7 +14,7 @@ import BandMember from "myComponents/BandMember.js";
 
 const useStyles = makeStyles(styles);
 
-export default function ZenithBandMembers() {
+export default function ZenithBandMembers(props) {
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,
@@ -30,36 +30,37 @@ export default function ZenithBandMembers() {
           <BandMember
             classes={classes}
             imageClasses={imageClasses}
-            content={
-              "On Vocals has a feel to bring the classic songs back to life. Loves to play Guitar and Keyboards."
-            }
-            member="Janette"
-            image={jan}
+            content={props.description1}
+            member={props.member1}
+            image={props.image1}
           />
           <BandMember
             classes={classes}
             imageClasses={imageClasses}
-            content={
-              "plays Guitar and Vocals brings the band together with his energy."
-            }
-            member="Ted"
-            image={ted}
+            content={props.description2}
+            member={props.member2}
+            image={props.image2}
           />
           <BandMember
             classes={classes}
             imageClasses={imageClasses}
-            content={"is impeccable on the Bass and Keyboards."}
-            member="Eddie Cuellar"
-            image={eddie}
+            content={props.description3}
+            member={props.member3}
+            image={props.image3}
           />
           <BandMember
             classes={classes}
             imageClasses={imageClasses}
-            content={
-              "is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
-            }
-            member="Damek"
-            image={damek}
+            content={props.description4}
+            member={props.member4}
+            image={props.image4}
+          />
+          <BandMember
+            classes={classes}
+            imageClasses={imageClasses}
+            content={props.description1}
+            member={props.member1}
+            image={props.image1}
           />
           <BandMember
             classes={classes}
