@@ -3,6 +3,12 @@ const imagesStyles = {
     maxWidth: "100%",
     height: "auto"
   },
+  imgBlackWhite: {
+    width: "100%",
+    height: "auto",
+    "-webkit-filter": "grayscale(100%)",
+    filter: "grayscale(100%)"
+  },
   imgRounded: {
     borderRadius: "6px !important"
   },

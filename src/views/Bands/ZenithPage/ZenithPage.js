@@ -18,10 +18,16 @@ import ZenithBandMembers from "./ZenithSections/ZenithBandMembers";
 import VideoSection from "../../../myComponents/VideoSection";
 
 // band members images:
-import damek from "assets/img/outerSite/zenith/band-members/damek.jpg";
-import eddie from "assets/img/outerSite/zenith/band-members/eddie-cuellar.jpg";
-import ted from "assets/img/outerSite/zenith/band-members/ted.png";
-import jan from "assets/img/outerSite/zenith/band-members/jan.jpg";
+// import damek from "assets/img/outerSite/zenith/band-members/damek.jpg";
+// import eddie from "assets/img/outerSite/zenith/band-members/eddie-cuellar.jpg";
+// import ted from "assets/img/outerSite/zenith/band-members/ted.png";
+// import jan from "assets/img/outerSite/zenith/band-members/jan.jpg";
+
+import damek from "assets/img/outerSite/zenith/band-members/damekSchool.jpg";
+import eddie from "assets/img/outerSite/zenith/band-members/longhair.jpg";
+import ted from "assets/img/outerSite/zenith/band-members/man2.jpg";
+import jan from "assets/img/outerSite/zenith/band-members/girl.jpg";
+import man from "assets/img/outerSite/zenith/band-members/man.jpg";
 
 const useStyles = makeStyles({
   container,
@@ -193,9 +199,9 @@ export default function ZenithPage() {
               image4={damek}
               member4="Damek"
               description4="is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
-              image5={damek}
+              image5={man}
               member5="bro"
-              description4="is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
+              description5="placeholder.inv"
             />
             <VideoSection urls={urls} />
           </div>

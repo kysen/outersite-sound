@@ -4,12 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
 import styles from "assets/jss/material-kit-react/views/outersiteSoundPageSections/meetTheBands.js";
 
-import damek from "assets/img/outerSite/zenith/band-members/damekSchool.jpg";
-import eddie from "assets/img/outerSite/zenith/band-members/longhair.jpg";
-import ted from "assets/img/outerSite/zenith/band-members/man2.jpg";
-import jan from "assets/img/outerSite/zenith/band-members/girl.jpg";
-import man from "assets/img/outerSite/zenith/band-members/man.jpg";
-
 import BandMember from "myComponents/BandMember.js";
 
 const useStyles = makeStyles(styles);
@@ -19,7 +13,7 @@ export default function ZenithBandMembers(props) {
   const imageClasses = classNames(
     classes.imgRaised,
     classes.imgRoundedCircle,
-    classes.imgFluid
+    classes.imgBlackWhite
   );
 
   return (
@@ -58,18 +52,9 @@ export default function ZenithBandMembers(props) {
           <BandMember
             classes={classes}
             imageClasses={imageClasses}
-            content={props.description1}
-            member={props.member1}
-            image={props.image1}
-          />
-          <BandMember
-            classes={classes}
-            imageClasses={imageClasses}
-            content={
-              "is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
-            }
-            member="bro"
-            image={man}
+            content={props.description5}
+            member={props.member5}
+            image={props.image5}
           />
         </GridContainer>
       </div>
