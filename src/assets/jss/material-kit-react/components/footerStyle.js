@@ -17,8 +17,6 @@ const footerStyle = {
     display: "block"
   },
   right: {
-    padding: "15px 0",
-    margin: "0",
     float: "right!important"
   },
   footer: {
@@ -30,8 +28,12 @@ const footerStyle = {
   },
   a: {
     color: primaryColor,
+    fontSize: "1.4em",
     textDecoration: "none",
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
+    "&:visited": {
+      color: primaryColor
+    }
   },
   footerWhiteFont: {
     "&,&:hover,&:focus": {

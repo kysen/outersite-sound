@@ -167,6 +167,9 @@ export default function ZenithPage() {
               image4={damek}
               member4="Damek"
               description4="is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
+              image5={damek}
+              member5="bro"
+              description4="is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
             />
             <VideoSection urls={urls} />
           </div>

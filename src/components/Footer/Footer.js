@@ -20,6 +20,12 @@ export default function Footer(props) {
         <div className={classes.left}>
           &copy; {1900 + new Date().getYear()} OutersiteSound
         </div>
+        <div className={classes.right}>
+          <h3>(555) - 555 - 5555</h3>
+          <a className={classes.a} target="blank_" href="#">
+            email.placeholder.com
+          </a>
+        </div>
       </div>
     </footer>
   );

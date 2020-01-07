@@ -4,10 +4,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
 import styles from "assets/jss/material-kit-react/views/outersiteSoundPageSections/meetTheBands.js";
 
-import damek from "assets/img/outerSite/zenith/band-members/damek.jpg";
-import eddie from "assets/img/outerSite/zenith/band-members/eddie-cuellar.jpg";
-import ted from "assets/img/outerSite/zenith/band-members/ted.png";
-import jan from "assets/img/outerSite/zenith/band-members/jan.jpg";
+import damek from "assets/img/outerSite/zenith/band-members/damekSchool.jpg";
+import eddie from "assets/img/outerSite/zenith/band-members/longhair.jpg";
+import ted from "assets/img/outerSite/zenith/band-members/man2.jpg";
+import jan from "assets/img/outerSite/zenith/band-members/girl.jpg";
+import man from "assets/img/outerSite/zenith/band-members/man.jpg";
 
 import BandMember from "myComponents/BandMember.js";
 
@@ -59,6 +60,15 @@ export default function ZenithBandMembers() {
             }
             member="Damek"
             image={damek}
+          />
+          <BandMember
+            classes={classes}
+            imageClasses={imageClasses}
+            content={
+              "is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
+            }
+            member="bro"
+            image={man}
           />
         </GridContainer>
       </div>
