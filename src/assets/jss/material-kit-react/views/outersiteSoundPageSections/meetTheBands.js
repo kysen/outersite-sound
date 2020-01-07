@@ -40,7 +40,8 @@ const teamStyle = {
   },
   description: {
     color: "#999",
-    fontSize: "1.3em"
+    fontSize: "1.8em",
+    lineHeight: "1.2"
   },
   justifyCenter: {
     justifyContent: "center !important"
@@ -53,7 +54,6 @@ const teamStyle = {
     top: "0",
     height: "100%",
     lineHeight: "80px",
-    fontSize: "80px",
     color: "#999",
     transition: ".3s ease-in-out",
     "&:hover": {
