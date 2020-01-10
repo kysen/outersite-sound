@@ -165,7 +165,7 @@ export default function ZenithPage() {
                       color="transparent"
                       className={classes.margin5}
                     >
-                      <a href={"mailto:thc5@comcast.net"}>
+                      <a href={"mailto:jan@outersitesound.com"}>
                         <i className={classes.emails + " far fa-envelope"} />
                       </a>
                     </Button>

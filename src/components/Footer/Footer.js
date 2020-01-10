@@ -24,8 +24,8 @@ export default function Footer(props) {
           <a className={classes.a} target="blank_" href="tel:801-518-3964">
             (801) - 518 - 3964
           </a>
-          <a className={classes.a} target="blank_" href="mailto:thc5@comcast.net">
-            thc5@comcast.net
+          <a className={classes.a} target="blank_" href="mailto:jan@outersitesound.com">
+            jan@outersitesound.com
           </a>
         </div>
       </div>
