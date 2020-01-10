@@ -17,7 +17,9 @@ const footerStyle = {
     display: "block"
   },
   right: {
-    float: "right!important"
+    float: "right!important",
+    display: "flex",
+    flexDirection: "column"
   },
   footer: {
     padding: "0.9375rem 0",
@@ -27,13 +29,14 @@ const footerStyle = {
     position: "relative"
   },
   a: {
-    color: primaryColor,
-    fontSize: "1.4em",
+    color: "inherit",
+    fontSize: "1em",
     textDecoration: "none",
     backgroundColor: "transparent",
+    transition: ".2s ease-in-out",
     "&:visited": {
-      color: primaryColor
-    }
+      color: "inherit",
+    },
   },
   footerWhiteFont: {
     "&,&:hover,&:focus": {

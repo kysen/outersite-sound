@@ -30,7 +30,7 @@ export default function OutersiteSoundPage(props) {
                 <h1 className={classes.title}>OuterSite Sound</h1>
                 <h3 className={classes.subtitle}>
                   Production of Music at its Finest.
-                </h3>
+              </h3>
                 <br />
               </div>
             </GridItem>

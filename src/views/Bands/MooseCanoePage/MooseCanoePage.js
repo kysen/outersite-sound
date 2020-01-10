@@ -137,7 +137,7 @@ export default function MooseCanoePage() {
                   </div>
                   <div className={classes.name}>
                     <h3 className={classes.title}>Moose Canoe</h3>
-                    <h6>Cover Band</h6>
+                    <h4>Cover Band</h4>
                     <Button
                       justIcon
                       color="transparent"

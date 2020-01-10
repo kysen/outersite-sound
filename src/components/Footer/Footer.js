@@ -21,9 +21,11 @@ export default function Footer(props) {
           &copy; {1900 + new Date().getYear()} OutersiteSound
         </div>
         <div className={classes.right}>
-          <h3>(555) - 555 - 5555</h3>
-          <a className={classes.a} target="blank_" href="#">
-            email.placeholder.com
+          <a className={classes.a} target="blank_" href="tel:801-518-3964">
+            (801) - 518 - 3964
+          </a>
+          <a className={classes.a} target="blank_" href="mailto:thc5@comcast.net">
+            thc5@comcast.net
           </a>
         </div>
       </div>

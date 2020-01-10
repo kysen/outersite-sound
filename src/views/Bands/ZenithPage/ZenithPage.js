@@ -146,8 +146,8 @@ export default function ZenithPage() {
                   </div>
                   <div className={classes.name}>
                     <h3 className={classes.title}>Zenith</h3>
-                    <h6>Cover Band</h6>
-                    <h6>Do Originals</h6>
+                    <h4>Cover Band</h4>
+                    <h4>Do Originals</h4>
                     <Button
                       justIcon
                       color="transparent"
@@ -165,7 +165,7 @@ export default function ZenithPage() {
                       color="transparent"
                       className={classes.margin5}
                     >
-                      <a href={"mailto:kysenj@gmail.com"}>
+                      <a href={"mailto:thc5@comcast.net"}>
                         <i className={classes.emails + " far fa-envelope"} />
                       </a>
                     </Button>
@@ -201,8 +201,8 @@ export default function ZenithPage() {
               member4="Damek"
               description4="is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
               image5={man}
-              member5="bro"
-              description5="placeholder.inv"
+              member5="other"
+              description5="placeholder"
             />
             <VideoSection urls={urls} />
           </div>
