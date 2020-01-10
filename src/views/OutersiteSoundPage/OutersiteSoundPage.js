@@ -27,7 +27,7 @@ export default function OutersiteSoundPage(props) {
           <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
               <div className={classes.brand}>
-                <h1 className={classes.title}>OuterSite Sound</h1>
+                <h1 className={classes.title}>Outersite Sound</h1>
                 <h3 className={classes.subtitle}>
                   Production of Music at its Finest.
               </h3>

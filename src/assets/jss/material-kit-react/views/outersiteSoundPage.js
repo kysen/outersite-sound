@@ -9,7 +9,7 @@ const landingPageStyle = {
   },
   title: {
     // ...title,
-    fontSize: "5rem",
+    fontSize: "8rem",
     fontWeight: "600",
     display: "inline-block",
     position: "relative",
@@ -23,7 +23,7 @@ const landingPageStyle = {
   subtitle: {
     color: "#F7CA00",
 
-    fontSize: "1.5rem",
+    fontSize: "1.8rem",
     maxWidth: "500px",
     margin: "10px auto 0",
     textAlign: "center"
