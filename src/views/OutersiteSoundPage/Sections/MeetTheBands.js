@@ -16,7 +16,87 @@ import styles from "assets/jss/material-kit-react/views/outersiteSoundPageSectio
 import team2 from "assets/img/outerSite/moose-canoe/stage-frontal.jpg";
 import team3 from "assets/img/outerSite/zenith/fam-pic.jpg";
 
-const useStyles = makeStyles(styles);
+import { cardTitle, title } from "assets/jss/material-kit-react.js";
+import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
+const useStyles = makeStyles({
+  section: {
+    padding: "70px 0",
+    textAlign: "center"
+  },
+  title: {
+    ...title,
+    marginBottom: "1rem",
+    marginTop: "30px",
+    minHeight: "32px",
+    textDecoration: "none"
+  },
+  ...imagesStyle,
+  gridItem: {
+    transition: ".3s ease-in-out",
+    borderRadius: "5px"
+  },
+  gridItemShadowed: {
+  },
+  cardShadow: {
+    cursor: "pointer",
+    transition: ".3s ease-in-out",
+    paddingTop: "20px",
+    "&:hover": {
+      boxShadow: "5px 5px 12px black"
+    }
+  },
+  itemGrid: {
+    marginLeft: "auto",
+    marginRight: "auto"
+  },
+  cardTitle,
+  smallTitle: {
+    color: "#6c757d"
+  },
+  description: {
+    color: "#999",
+    fontSize: "1.8em",
+    lineHeight: "1.2"
+  },
+  justifyCenter: {
+    justifyContent: "center !important"
+  },
+  emails: {
+    marginTop: "0",
+    width: "100%",
+    transform: "none",
+    left: "0",
+    top: "0",
+    height: "100%",
+    lineHeight: "41px",
+    fontSize: "20px",
+    color: "#999",
+    cursor: "poiner",
+    transition: ".3s ease-in-out",
+    "&:hover": {
+      color: "red"
+    }
+  },
+  socials: {
+    marginTop: "0",
+    width: "100%",
+    transform: "none",
+    left: "0",
+    top: "0",
+    height: "100%",
+    lineHeight: "80px",
+    color: "#999",
+    transition: ".3s ease-in-out",
+    "&:hover": {
+      color: "blue"
+    }
+  },
+  margin5: {
+    margin: "5px",
+    padding: "none"
+  }
+});
+
 
 export default function MeetTheBands() {
   const classes = useStyles();
@@ -27,7 +107,7 @@ export default function MeetTheBands() {
   );
 
   const handleLinkClick = link => {
-    window.location.href = link;
+    window.open(link, "_blank");
   };
   return (
     <div className={classes.section}>
@@ -36,7 +116,7 @@ export default function MeetTheBands() {
         <GridContainer>
           <GridItem xs={12} sm={12} md={6} className={classes.gridItemShadowed}>
             <Link to="zenith">
-              <Card plain>
+              <Card plain className={classes.cardShadow}>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                   <img src={team3} alt="..." className={imageClasses} />
                 </GridItem>
@@ -54,13 +134,35 @@ export default function MeetTheBands() {
                     they originate.
                   </p>
                 </CardBody>
-                <CardFooter className={classes.justifyCenter}></CardFooter>
               </Card>
             </Link>
+            <CardFooter className={classes.justifyCenter}>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                  onClick={() =>
+                    handleLinkClick(
+                      "https://www.facebook.com/moose.canoe/timeline?lst=100042823572604%3A100000708717440%3A1578696221"
+                    )
+                  }
+                >
+                  <i className={classes.socials + " fab fa-facebook-f"} />
+                </Button>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <a href={"mailto:thc5@comcast.net"}>
+                    <i className={classes.emails + " far fa-envelope"} />
+                  </a>
+                </Button>
+              </CardFooter>
           </GridItem>
           <GridItem xs={12} sm={12} md={6} className={classes.gridItemShadowed}>
             <Link to="moose-canoe">
-              <Card plain>
+              <Card plain className={classes.cardShadow}>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                   <img src={team2} alt="..." className={imageClasses} />
                 </GridItem>
@@ -68,7 +170,6 @@ export default function MeetTheBands() {
                 <CardBody>
                   <p
                     className={classes.description}
-                    styles={{ fontSize: "2em" }}
                   >
                     “Moose Canoe” don’t let the name fool you. It’s a fun name
                     that you can scream out loud at a Rock Concert. The band
@@ -76,20 +177,31 @@ export default function MeetTheBands() {
                     They take you back to the days you loved.
                   </p>
                 </CardBody>
-                <CardFooter className={classes.justifyCenter}>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                    onClick={() =>
-                      handleLinkClick("https://www.facebook.com/moose.canoe")
-                    }
-                  >
-                    <i className={classes.socials + " fab fa-facebook-f"} />
-                  </Button>
-                </CardFooter>
               </Card>
             </Link>
+              <CardFooter className={classes.justifyCenter}>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                  onClick={() =>
+                    handleLinkClick(
+                      "https://www.facebook.com/moose.canoe/timeline?lst=100042823572604%3A100000708717440%3A1578696221"
+                    )
+                  }
+                >
+                  <i className={classes.socials + " fab fa-facebook-f"} />
+                </Button>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                >
+                  <a href={"mailto:thc5@comcast.net"}>
+                    <i className={classes.emails + " far fa-envelope"} />
+                  </a>
+                </Button>
+              </CardFooter>
           </GridItem>
         </GridContainer>
       </div>

@@ -44,7 +44,7 @@ const useStyles = makeStyles({
   },
   ...imagesStyle,
   main: {
-    background: "#FFFFFF",
+    background: "#FFFFF5",
     position: "relative",
     zIndex: "3"
   },
@@ -76,6 +76,22 @@ const useStyles = makeStyles({
     transition: ".3s ease-in-out",
     "&:hover": {
       color: "blue"
+    }
+  },
+  emails: {
+    marginTop: "0",
+    width: "100%",
+    transform: "none",
+    left: "0",
+    top: "0",
+    height: "100%",
+    lineHeight: "41px",
+    fontSize: "20px",
+    color: "#999",
+    cursor: "poiner",
+    transition: ".3s ease-in-out",
+    "&:hover": {
+      color: "red"
     }
   },
   navWrapper: {
@@ -144,11 +160,20 @@ export default function MooseCanoePage() {
                       className={classes.margin5}
                       onClick={() =>
                         handleLinkClick(
-                          "https://www.facebook.com/profile.php?id=100011745003253"
+                          "https://www.facebook.com/moose.canoe/timeline?lst=100042823572604%3A100000708717440%3A1578696221"
                         )
                       }
                     >
                       <i className={classes.socials + " fab fa-facebook-f"} />
+                    </Button>
+                    <Button
+                      justIcon
+                      color="transparent"
+                      className={classes.margin5}
+                    >
+                      <a href={"mailto:thc5@comcast.net"}>
+                        <i className={classes.emails + " far fa-envelope"} />
+                      </a>
                     </Button>
                   </div>
                 </div>

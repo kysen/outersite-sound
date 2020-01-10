@@ -29,7 +29,7 @@ const landingPageStyle = {
     textAlign: "center"
   },
   main: {
-    background: "#FFFEE8",
+    background: "#FFFFF5",
     position: "relative",
     zIndex: "3"
   },

@@ -57,7 +57,7 @@ const useStyles = makeStyles({
   },
   ...imagesStyle,
   main: {
-    background: "#FFFFFF",
+    background: "#FFFFF5",
     position: "relative",
     zIndex: "3"
   },
