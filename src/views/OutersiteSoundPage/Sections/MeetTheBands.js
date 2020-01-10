@@ -143,8 +143,8 @@ export default function MeetTheBands() {
                   className={classes.margin5}
                   onClick={() =>
                     handleLinkClick(
-                      "https://www.facebook.com/moose.canoe/timeline?lst=100042823572604%3A100000708717440%3A1578696221"
-                    )
+                      "https://www.facebook.com/profile.php?id=100011745003253"
+                      )
                   }
                 >
                   <i className={classes.socials + " fab fa-facebook-f"} />
