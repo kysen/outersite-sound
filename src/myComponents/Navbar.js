@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     },
     tab: {
         transition: ".2s ease-in-out",
-        color: "#FFFBB0",
+        color: "#EED628",
         padding: 20,
     }
   })
