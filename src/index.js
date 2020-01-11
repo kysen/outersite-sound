@@ -12,7 +12,6 @@ import ZenithPage from "views/Bands/ZenithPage/ZenithPage.js";
 import MooseCanoePage from "views/Bands/MooseCanoePage/MooseCanoePage.js";
 
 var hist = createBrowserHistory();
-
 ReactDOM.render(
   <Router onUpdate={() => window.scrollTo(0, 0)} history={hist}>
     <Navbar />

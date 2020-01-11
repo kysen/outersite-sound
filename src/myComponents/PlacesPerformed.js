@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // styles copied
 import { title } from "assets/jss/material-kit-react.js";
-import { PlaceSharp } from "@material-ui/icons";
 
 const teamStyle = {
   section: {
