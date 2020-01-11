@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <div className={classes.navbar}>
-        <Link exact to="" className={classes.tab}>HOME</Link>
+        <Link to="" className={classes.tab}>HOME</Link>
         <Link to="zenith" className={classes.tab}>ZENITH</Link>
         <Link to="moose-canoe" className={classes.tab}>MOOSE CANOE</Link>
     </div>

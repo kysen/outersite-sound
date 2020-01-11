@@ -11,8 +11,6 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
-import styles from "assets/jss/material-kit-react/views/outersiteSoundPageSections/meetTheBands.js";
-
 import team2 from "assets/img/outerSite/moose-canoe/stage-frontal.jpg";
 import team3 from "assets/img/outerSite/zenith/fam-pic.jpg";
 
@@ -20,7 +18,7 @@ import { cardTitle, title } from "assets/jss/material-kit-react.js";
 import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
 const useStyles = makeStyles({
   section: {
-    padding: "70px 0",
+    padding: "70px 0 0 0",
     textAlign: "center"
   },
   title: {
@@ -97,8 +95,12 @@ const useStyles = makeStyles({
   }
 });
 
-
 export default function MeetTheBands() {
+
+  React.useEffect(() => {
+    window.scrollTo(0,0)
+  })
+
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,

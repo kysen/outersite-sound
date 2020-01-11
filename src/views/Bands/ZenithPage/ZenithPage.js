@@ -6,7 +6,6 @@ import Footer from "components/Footer/Footer.js";
 import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Parallax from "components/Parallax/Parallax.js";
 
 import { container, title } from "assets/jss/material-kit-react.js";
 
@@ -16,12 +15,7 @@ import profile from "assets/img/outerSite/zenith/zenith-round-logo.jpg";
 
 import ZenithBandMembers from "./ZenithSections/ZenithBandMembers";
 import VideoSection from "../../../myComponents/VideoSection";
-
-// band members images:
-// import damek from "assets/img/outerSite/zenith/band-members/damek.jpg";
-// import eddie from "assets/img/outerSite/zenith/band-members/eddie-cuellar.jpg";
-// import ted from "assets/img/outerSite/zenith/band-members/ted.png";
-// import jan from "assets/img/outerSite/zenith/band-members/jan.jpg";
+import PlacesPerformed from "../../../myComponents/PlacesPerformed";
 
 import damek from "assets/img/outerSite/zenith/band-members/damekSchool.jpg";
 import eddie from "assets/img/outerSite/zenith/band-members/longhair.jpg";
@@ -29,16 +23,23 @@ import ted from "assets/img/outerSite/zenith/band-members/man2.jpg";
 import jan from "assets/img/outerSite/zenith/band-members/girl.jpg";
 import man from "assets/img/outerSite/zenith/band-members/man.jpg";
 
+import landingImage from "assets/img/outerSite/zenith/zenith-banner.jpg"
+
 const useStyles = makeStyles({
   container,
+  backImage: {
+    height: "99vh",
+    width: "99vw",
+    maxWidth: "100vw",
+    filter: "brightness(50%)"
+  },
   profile: {
     textAlign: "center",
-    "& img": {
-      maxWidth: "160px",
-      width: "100%",
-      margin: "0 auto",
-      transform: "translate3d(0, -50%, 0)"
-    }
+    position: "relative",
+    marginTop: "110px",
+  },
+  zenithLogo: {
+    transform: "translate3d(0, -50%, 0)"
   },
   description: {
     margin: "1.071rem auto 0",
@@ -114,6 +115,23 @@ const useStyles = makeStyles({
 });
 
 export default function ZenithPage() {
+
+  const places = [
+    "White City Days at Bear Park",
+    "Jordan Landing",
+    "Gallivan Center",
+    "Hogle Zoo",
+    "Caesars Motocycle Back",
+    "Human Society in West Valley",
+    "Club 48 for a benefit for cancer",
+    "Many clubs in Salt Lake city",
+    "Weddings",
+    "Kellogg Garden Products Corporate meeting"
+  ]
+
+  React.useEffect(() => {
+    window.scrollTo(0,0)
+  })
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,
@@ -131,18 +149,19 @@ export default function ZenithPage() {
   ];
   return (
     <div>
-      <Parallax
-        filter
-        image={require("assets/img/outerSite/zenith/zenith-banner.jpg")}
+      <img 
+        className={classes.backImage}
+        src={landingImage}
+        alt="background"
       />
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={classNames(classes.main)}>
         <div>
           <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
                   <div>
-                    <img src={profile} alt="..." className={imageClasses} />
+                    <img src={profile} alt="..." className={`${imageClasses} ${classes.zenithLogo}`} />
                   </div>
                   <div className={classes.name}>
                     <h3 className={classes.title}>Zenith</h3>
@@ -205,6 +224,7 @@ export default function ZenithPage() {
               description5="placeholder"
             />
             <VideoSection urls={urls} />
+            <PlacesPerformed places={places} />
           </div>
         </div>
       </div>

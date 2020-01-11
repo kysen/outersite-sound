@@ -14,7 +14,7 @@ import MooseCanoePage from "views/Bands/MooseCanoePage/MooseCanoePage.js";
 var hist = createBrowserHistory();
 
 ReactDOM.render(
-  <Router history={hist}>
+  <Router onUpdate={() => window.scrollTo(0, 0)} history={hist}>
     <Navbar />
     <Switch>
       <Route path="/zenith" component={ZenithPage} />

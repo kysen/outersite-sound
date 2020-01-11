@@ -6,9 +6,6 @@ import Footer from "components/Footer/Footer.js";
 import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Parallax from "components/Parallax/Parallax.js";
-
-import profile from "assets/img/outerSite/moose-canoe/outersite-round-logo.png";
 
 import { container, title } from "assets/jss/material-kit-react.js";
 
@@ -16,17 +13,24 @@ import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
 
 // import ZenithBandMembers from "./ZenithSections/ZenithBandMembers";
 import VideoSection from "../../../myComponents/VideoSection";
+import PlacesPerformed from "../../../myComponents/PlacesPerformed";
+
+
+import landingImage from "assets/img/outerSite/moose-canoe/moose-canoe-backdrop.png"
 
 const useStyles = makeStyles({
   container,
+  backImage: {
+    height: "99vh",
+    width: "99vw",
+    maxWidth: "100vw",
+    filter: "brightness(50%)"
+  },
   profile: {
     textAlign: "center",
-    "& img": {
-      maxWidth: "160px",
-      width: "100%",
-      margin: "0 auto",
-      transform: "translate3d(0, -50%, 0)"
-    }
+    position: "relative",
+    marginTop: "70px",
+    transform: "translate3d(0, 0, 0)"
   },
   description: {
     margin: "1.071rem auto 0",
@@ -60,7 +64,11 @@ const useStyles = makeStyles({
     position: "relative",
     marginTop: "30px",
     minHeight: "32px",
-    textDecoration: "none"
+    textDecoration: "none",
+    fontSize: "3em"
+  },
+  subTitle: {
+    fontSize: "1.3em",
   },
   socials: {
     marginTop: "0",
@@ -101,12 +109,25 @@ const useStyles = makeStyles({
 });
 
 export default function MooseCanoePage() {
+
+  const places = [
+    "White City Days at Bear Park",
+    "Layton Festival",
+    "Utah State Fair",
+    "Jordan Landing",
+    "Hogle Zoo",
+    "Caesars Motorcycle Bash",
+    "Pinedale Wyoming",
+    "Stockmans Layton Utah",
+    "Many clubs around the Salt Lake City area",
+    "Park Silly Days",
+  ]
+
+  React.useEffect(() => {
+    window.scrollTo(0,0)
+  })
+
   const classes = useStyles();
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
   const handleLinkClick = link => {
     window.open(link, "_blank");
   };
@@ -138,22 +159,23 @@ export default function MooseCanoePage() {
   ];
   return (
     <div>
-      <Parallax
-        filter
-        image={require("assets/img/outerSite/moose-canoe/moose-canoe-backdrop.png")}
+      <img 
+       className={classes.backImage}
+        src={landingImage}
+        alt="limage"
       />
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={classNames(classes.main)}>
         <div>
           <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
-                  <div>
+                  {/* <div>
                     <img src={profile} alt="..." className={imageClasses} />
-                  </div>
+                  </div> */}
                   <div className={classes.name}>
                     <h3 className={classes.title}>Moose Canoe</h3>
-                    <h4>Cover Band</h4>
+                    <h4 className={classes.subTitle}>Cover Band</h4>
                     <Button
                       justIcon
                       color="transparent"
@@ -223,6 +245,8 @@ export default function MooseCanoePage() {
             </div>
             {/* <ZenithBandMembers /> */}
             <VideoSection urls={urls} />
+            <PlacesPerformed places={places} />
+
           </div>
         </div>
       </div>
