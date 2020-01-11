@@ -26,11 +26,10 @@ const useStyles = makeStyles({
     justifyContent: "center",
   },
   wasParallax: {
-    backgroundImage: `url(${landingImage})`,
+    background: `linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2) ), url(${landingImage})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "99vw 99vh",
-
 
     height: "99vh",
     width: "99vw",

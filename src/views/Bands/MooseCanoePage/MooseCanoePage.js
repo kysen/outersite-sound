@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     height: "99vh",
     width: "99vw",
     maxWidth: "100vw",
-    filter: "brightness(50%)"
+    filter: "brightness(60%)"
   },
   profile: {
     textAlign: "center",

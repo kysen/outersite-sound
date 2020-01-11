@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     height: "99vh",
     width: "99vw",
     maxWidth: "100vw",
-    filter: "brightness(50%)"
+    filter: "brightness(80%)"
   },
   profile: {
     textAlign: "center",
@@ -208,19 +208,19 @@ export default function ZenithPage() {
             {/* TODO */}
             <ZenithBandMembers
               member5="Eddy"
-              description5="the originator of Zenith and also the Drummer, said he named it because the songs we perform were in the Zenith time period from which they originate."
+              description5="The originator of Zenith and also the Drummer, said he named it because the songs we perform were in the Zenith time period from which they originate."
               image1={jan}
               member1="Janette"
               description1="On Vocals has a feel to bring the classic songs back to life. Loves to play Guitar and Keyboards."
               image2={ted}
               member2="Ted"
-              description2="plays Guitar and Vocals brings the band together with his energy."
+              description2="Plays Guitar and Vocals brings the band together with his energy."
               image3={eddie}
               member3="Eddie"
-              description3="is impeccable on the Bass and Keyboards."
+              description3="Is impeccable on the Bass and Keyboards."
               image4={damek}
               member4="Damek"
-              description4="is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
+              description4="Is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
               image5={man}
             />
             <VideoSection urls={urls} />
