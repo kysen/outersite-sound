@@ -207,6 +207,8 @@ export default function ZenithPage() {
             </div>
             {/* TODO */}
             <ZenithBandMembers
+              member5="Eddy"
+              description5="the originator of Zenith and also the Drummer, said he named it because the songs we perform were in the Zenith time period from which they originate."
               image1={jan}
               member1="Janette"
               description1="On Vocals has a feel to bring the classic songs back to life. Loves to play Guitar and Keyboards."
@@ -214,14 +216,12 @@ export default function ZenithPage() {
               member2="Ted"
               description2="plays Guitar and Vocals brings the band together with his energy."
               image3={eddie}
-              member3="Eddie Cuellar"
+              member3="Eddie"
               description3="is impeccable on the Bass and Keyboards."
               image4={damek}
               member4="Damek"
               description4="is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
               image5={man}
-              member5="other"
-              description5="placeholder"
             />
             <VideoSection urls={urls} />
             <PlacesPerformed places={places} />

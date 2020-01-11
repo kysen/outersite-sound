@@ -24,6 +24,13 @@ export default function ZenithBandMembers(props) {
           <BandMember
             classes={classes}
             imageClasses={imageClasses}
+            content={props.description5}
+            member={props.member5}
+            image={props.image5}
+          />
+          <BandMember
+            classes={classes}
+            imageClasses={imageClasses}
             content={props.description1}
             member={props.member1}
             image={props.image1}
@@ -48,13 +55,6 @@ export default function ZenithBandMembers(props) {
             content={props.description4}
             member={props.member4}
             image={props.image4}
-          />
-          <BandMember
-            classes={classes}
-            imageClasses={imageClasses}
-            content={props.description5}
-            member={props.member5}
-            image={props.image5}
           />
         </GridContainer>
       </div>
