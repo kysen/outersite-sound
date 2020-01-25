@@ -15,8 +15,7 @@ import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
 import VideoSection from "../../../myComponents/VideoSection";
 import PlacesPerformed from "../../../myComponents/PlacesPerformed";
 
-
-import landingImage from "assets/img/outerSite/moose-canoe/moose-canoe-backdrop.png"
+import landingImage from "assets/img/outerSite/moose-canoe/moose-canoe-backdrop.png";
 
 const useStyles = makeStyles({
   container,
@@ -24,39 +23,39 @@ const useStyles = makeStyles({
     height: "99vh",
     width: "99vw",
     maxWidth: "100vw",
-    filter: "brightness(60%)"
+    filter: "brightness(60%)",
   },
   profile: {
     textAlign: "center",
     position: "relative",
     marginTop: "70px",
-    transform: "translate3d(0, 0, 0)"
+    transform: "translate3d(0, 0, 0)",
   },
   description: {
     margin: "1.071rem auto 0",
     maxWidth: "600px",
     color: "#999",
-    textAlign: "center !important"
+    textAlign: "center !important",
   },
   paragraph: {
     fontSize: "20px",
     padding: "0px 0px 20px 0px",
-    color: "black"
+    color: "black",
   },
   name: {
-    marginTop: "-80px"
+    marginTop: "-80px",
   },
   ...imagesStyle,
   main: {
     background: "#FFFFF5",
     position: "relative",
-    zIndex: "3"
+    zIndex: "3",
   },
   mainRaised: {
     margin: "-60px 30px 0px",
     borderRadius: "6px",
     boxShadow:
-      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
+      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)",
   },
   title: {
     ...title,
@@ -65,7 +64,7 @@ const useStyles = makeStyles({
     marginTop: "30px",
     minHeight: "32px",
     textDecoration: "none",
-    fontSize: "3em"
+    fontSize: "3em",
   },
   subTitle: {
     fontSize: "1.3em",
@@ -83,8 +82,8 @@ const useStyles = makeStyles({
     cursor: "poiner",
     transition: ".3s ease-in-out",
     "&:hover": {
-      color: "blue"
-    }
+      color: "blue",
+    },
   },
   emails: {
     marginTop: "0",
@@ -99,16 +98,45 @@ const useStyles = makeStyles({
     cursor: "poiner",
     transition: ".3s ease-in-out",
     "&:hover": {
-      color: "red"
-    }
+      color: "red",
+    },
   },
   navWrapper: {
     margin: "20px auto 50px auto",
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 });
 
 export default function MooseCanoePage() {
+  const axios = require("axios");
+
+  const [snippet, setSnippet] = React.useState(0);
+
+  React.useEffect(() => {}, [snippet]);
+  if (snippet === 0) {
+    axios
+      .get("https://www.googleapis.com/youtube/v3/playlistItems", {
+        params: {
+          part: "snippet",
+          maxResults: 50,
+          playlistId: "PLnmIjmEVVCoWUZBcosKDgCGtiVI3zPDg3",
+          key: "AIzaSyDU9HU_OI90sHgoG0dmeZNDiMdeU7Zp6sU",
+          enableJsApi: 1,
+        },
+      })
+      .then(response => {
+        setSnippet(response.data.items);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  // curl \
+  // 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLnmIjmEVVCoWUZBcosKDgCGtiVI3zPDg3&key=[YOUR_API_KEY]' \
+  // --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  // --header 'Accept: application/json' \
+  // --compressed
 
   const places = [
     "White City Days at Bear Park",
@@ -121,49 +149,20 @@ export default function MooseCanoePage() {
     "Stockmans Layton Utah",
     "Many clubs around the Salt Lake City area",
     "Park Silly Days",
-  ]
+  ];
 
   React.useEffect(() => {
-    window.scrollTo(0,0)
-  })
+    window.scrollTo(0, 0);
+  });
 
   const classes = useStyles();
   const handleLinkClick = link => {
     window.open(link, "_blank");
   };
-  const urls = [
-    {
-      url: "https://www.youtube.com/watch?v=2HIC3hn0sPY",
-      description: "Magic Man"
-    },
-    {
-      url: "https://www.youtube.com/watch?v=zm07CN33J-g",
-      description: "Sweet Emotion, Walk This Way"
-    },
-    {
-      url: "https://www.youtube.com/watch?v=4jE7H3nQAY4",
-      description: "Black Magic Woman"
-    },
-    {
-      url: "https://www.youtube.com/watch?v=XTjTpsP7k58",
-      description: "Kenny playing Radar Love with Moose Canoe White City Days"
-    },
-    {
-      url: "https://www.youtube.com/watch?v=9SwWxG5sqWI",
-      description: "Rhiannon – Moose Canoe White City Days"
-    },
-    {
-      url: "https://www.youtube.com/watch?v=efbSsZFd9qM",
-      description: "Feel Like A Woman"
-    }
-  ];
+
   return (
     <div>
-      <img 
-       className={classes.backImage}
-        src={landingImage}
-        alt="limage"
-      />
+      <img className={classes.backImage} src={landingImage} alt="limage" />
       <div className={classNames(classes.main)}>
         <div>
           <div className={classes.container}>
@@ -182,7 +181,7 @@ export default function MooseCanoePage() {
                       className={classes.margin5}
                       onClick={() =>
                         handleLinkClick(
-                          "https://www.facebook.com/moose.canoe/timeline?lst=100042823572604%3A100000708717440%3A1578696221"
+                          "https://www.facebook.com/moose.canoe/timeline?lst=100042823572604%3A100000708717440%3A1578696221",
                         )
                       }
                     >
@@ -244,9 +243,8 @@ export default function MooseCanoePage() {
               </p>
             </div>
             {/* <ZenithBandMembers /> */}
-            <VideoSection urls={urls} />
+            <VideoSection snippet={snippet} />
             <PlacesPerformed places={places} />
-
           </div>
         </div>
       </div>

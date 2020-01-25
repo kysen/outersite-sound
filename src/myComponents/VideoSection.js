@@ -12,28 +12,28 @@ import ReactPlayer from "react-player";
 const teamStyle = {
   section: {
     padding: "70px 0 0 0",
-    textAlign: "center"
+    textAlign: "center",
   },
   title: {
     ...title,
     marginBottom: "1rem",
     marginTop: "30px",
     minHeight: "32px",
-    textDecoration: "none"
+    textDecoration: "none",
   },
   ...imagesStyle,
   gridItem: {
     width: "100%",
     height: "100%",
-    padding: "50px 0px"
+    padding: "50px 0px",
   },
   video: {
-    height: "100%"
+    height: "100%",
   },
   vidSubtitle: {
     padding: "20px",
-    fontSize: "25px"
-  }
+    fontSize: "25px",
+  },
 };
 const useStyles = makeStyles(teamStyle);
 
@@ -41,16 +41,31 @@ export default function VideoSection(props) {
   const classes = useStyles();
 
   const displayVideos = () => {
-    return props.urls.map((current, id) => {
-      return (
-        <GridItem xs={12} key={id} className={classes.gridItem}>
-          <GridItem xs={12} className={classes.video}>
-            <ReactPlayer url={current.url} width="100%" height="30vw" />
+    if (props.snippet === 0) {
+      return <div>Loading...</div>;
+    } else {
+      return props.snippet.map((current, id) => {
+        return (
+          <GridItem xs={12} key={id} className={classes.gridItem}>
+            <GridItem xs={12} className={classes.video}>
+              <ReactPlayer
+                url={`https://www.youtube.com/watch?v=${current.snippet.resourceId.videoId}`}
+                width="100%"
+                height="30vw"
+                config={{
+                  youtube: {
+                    playerVars: {
+                      origin: window.location.href,
+                    },
+                  },
+                }}
+              />
+            </GridItem>
+            <div className={classes.vidSubtitle}>{current.snippet.title}</div>
           </GridItem>
-          <div className={classes.vidSubtitle}>{current.description}</div>
-        </GridItem>
-      );
-    });
+        );
+      });
+    }
   };
   return (
     <div className={classes.section}>
