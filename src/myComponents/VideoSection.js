@@ -55,7 +55,7 @@ export default function VideoSection(props) {
                 config={{
                   youtube: {
                     playerVars: {
-                      origin: window.location.href,
+                      origin: "https://www.outersitesound.com/",
                     },
                   },
                 }}
