@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
 
 import { Link } from "react-router-dom";
@@ -15,49 +14,54 @@ import team2 from "assets/img/outerSite/moose-canoe/stage-frontal.jpg";
 import team3 from "assets/img/outerSite/zenith/fam-pic.jpg";
 
 import { cardTitle, title } from "assets/jss/material-kit-react.js";
-import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
 const useStyles = makeStyles({
   section: {
     padding: "70px 0 0 0",
-    textAlign: "center"
+    textAlign: "center",
   },
   title: {
     ...title,
     marginBottom: "1rem",
     marginTop: "30px",
     minHeight: "32px",
-    textDecoration: "none"
+    textDecoration: "none",
   },
-  ...imagesStyle,
+  seventyWidth: {
+    width: "70vw",
+  },
   gridItem: {
     transition: ".3s ease-in-out",
-    borderRadius: "5px"
+    borderRadius: "5px",
   },
-  gridItemShadowed: {
-  },
+  gridItemShadowed: {},
   cardShadow: {
     cursor: "pointer",
     transition: ".3s ease-in-out",
     paddingTop: "20px",
     "&:hover": {
-      boxShadow: "5px 5px 12px black"
-    }
+      boxShadow: "5px 5px 12px black",
+    },
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
   },
-  itemGrid: {
-    marginLeft: "auto",
-    marginRight: "auto"
+  itemGrid: {},
+  roundedImage: {
+    borderRadius: "50%",
+    height: "300px",
   },
   cardTitle,
   smallTitle: {
-    color: "#6c757d"
+    color: "#6c757d",
   },
   description: {
     color: "#999",
     fontSize: "1.8em",
-    lineHeight: "1.2"
+    lineHeight: "1.2",
   },
   justifyCenter: {
-    justifyContent: "center !important"
+    justifyContent: "center !important",
   },
   emails: {
     marginTop: "0",
@@ -72,8 +76,8 @@ const useStyles = makeStyles({
     cursor: "poiner",
     transition: ".3s ease-in-out",
     "&:hover": {
-      color: "red"
-    }
+      color: "red",
+    },
   },
   socials: {
     marginTop: "0",
@@ -86,27 +90,22 @@ const useStyles = makeStyles({
     color: "#999",
     transition: ".3s ease-in-out",
     "&:hover": {
-      color: "blue"
-    }
+      color: "blue",
+    },
   },
   margin5: {
     margin: "5px",
-    padding: "none"
-  }
+    padding: "none",
+  },
+  "@media (max-width: 500px)": {},
 });
 
 export default function MeetTheBands() {
-
   React.useEffect(() => {
-    window.scrollTo(0,0)
-  })
+    window.scrollTo(0, 0);
+  });
 
   const classes = useStyles();
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
 
   const handleLinkClick = link => {
     window.open(link, "_blank");
@@ -114,14 +113,14 @@ export default function MeetTheBands() {
   return (
     <div className={classes.section}>
       <h2 className={classes.title}>Meet the Bands!</h2>
-      <div>
+      <div className={classes.seventyWidth}>
         <GridContainer>
           <GridItem xs={12} sm={12} md={6} className={classes.gridItemShadowed}>
             <Link to="zenith">
               <Card plain className={classes.cardShadow}>
-                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={team3} alt="..." className={imageClasses} />
-                </GridItem>
+                <div xs={12} sm={12} md={6} className={classes.itemGrid}>
+                  <img src={team3} alt="..." className={classes.roundedImage} />
+                </div>
                 <h3 className={classes.cardTitle}>
                   Zenith
                   <br />
@@ -139,40 +138,34 @@ export default function MeetTheBands() {
               </Card>
             </Link>
             <CardFooter className={classes.justifyCenter}>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                  onClick={() =>
-                    handleLinkClick(
-                      "https://www.facebook.com/profile.php?id=100011745003253"
-                      )
-                  }
-                >
-                  <i className={classes.socials + " fab fa-facebook-f"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <a href={"mailto:jan@outersitesound.com"}>
-                    <i className={classes.emails + " far fa-envelope"} />
-                  </a>
-                </Button>
-              </CardFooter>
+              <Button
+                justIcon
+                color="transparent"
+                className={classes.margin5}
+                onClick={() =>
+                  handleLinkClick(
+                    "https://www.facebook.com/profile.php?id=100011745003253",
+                  )
+                }
+              >
+                <i className={classes.socials + " fab fa-facebook-f"} />
+              </Button>
+              <Button justIcon color="transparent" className={classes.margin5}>
+                <a href={"mailto:jan@outersitesound.com"}>
+                  <i className={classes.emails + " far fa-envelope"} />
+                </a>
+              </Button>
+            </CardFooter>
           </GridItem>
           <GridItem xs={12} sm={12} md={6} className={classes.gridItemShadowed}>
             <Link to="moose-canoe">
               <Card plain className={classes.cardShadow}>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                  <img src={team2} alt="..." className={imageClasses} />
+                  <img src={team2} alt="..." className={classes.roundedImage} />
                 </GridItem>
                 <h3 className={classes.cardTitle}>Moose Canoe</h3>
                 <CardBody>
-                  <p
-                    className={classes.description}
-                  >
+                  <p className={classes.description}>
                     “Moose Canoe” don’t let the name fool you. It’s a fun name
                     that you can scream out loud at a Rock Concert. The band
                     "MOOSE CANOE" is a widely versatile and very seasoned group.
@@ -181,29 +174,25 @@ export default function MeetTheBands() {
                 </CardBody>
               </Card>
             </Link>
-              <CardFooter className={classes.justifyCenter}>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                  onClick={() =>
-                    handleLinkClick(
-                      "https://www.facebook.com/moose.canoe/timeline?lst=100042823572604%3A100000708717440%3A1578696221"
-                    )
-                  }
-                >
-                  <i className={classes.socials + " fab fa-facebook-f"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <a href={"mailto:jan@outersitesound.com"}>
-                    <i className={classes.emails + " far fa-envelope"} />
-                  </a>
-                </Button>
-              </CardFooter>
+            <CardFooter className={classes.justifyCenter}>
+              <Button
+                justIcon
+                color="transparent"
+                className={classes.margin5}
+                onClick={() =>
+                  handleLinkClick(
+                    "https://www.facebook.com/moose.canoe/timeline?lst=100042823572604%3A100000708717440%3A1578696221",
+                  )
+                }
+              >
+                <i className={classes.socials + " fab fa-facebook-f"} />
+              </Button>
+              <Button justIcon color="transparent" className={classes.margin5}>
+                <a href={"mailto:jan@outersitesound.com"}>
+                  <i className={classes.emails + " far fa-envelope"} />
+                </a>
+              </Button>
+            </CardFooter>
           </GridItem>
         </GridContainer>
       </div>

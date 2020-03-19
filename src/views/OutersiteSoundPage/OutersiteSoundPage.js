@@ -1,6 +1,6 @@
 import React from "react";
 
-import classNames from "classnames";
+// import classNames from "classnames";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -10,16 +10,13 @@ import GridItem from "components/Grid/GridItem.js";
 
 import MeetTheBands from "./Sections/MeetTheBands.js";
 
-import landingImage from "assets/img/a-purple-space-background.jpg"
-
-import { container } from "assets/jss/material-kit-react.js";
+import landingImage from "assets/img/a-purple-space-background.jpg";
 
 const useStyles = makeStyles({
   container: {
+    overflowX: "hidden",
     zIndex: "12",
     color: "#FFFFFF",
-    ...container,
-    height: "99vh",
     width: "99vw",
     display: "flex",
     alignItems: "center",
@@ -35,6 +32,15 @@ const useStyles = makeStyles({
     width: "99vw",
     maxWidth: "100vw",
   },
+  headerContainer: {
+    zIndex: "12",
+    color: "#FFFFFF",
+    width: "99vw",
+    height: "99vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   title: {
     // ...title,
     fontSize: "8rem",
@@ -46,7 +52,7 @@ const useStyles = makeStyles({
     color: "#F7CA00",
     textDecoration: "none",
     width: "100%",
-    textAlign: "center"
+    textAlign: "center",
   },
   subtitle: {
     color: "#F7CA00",
@@ -54,28 +60,37 @@ const useStyles = makeStyles({
     fontSize: "1.8rem",
     maxWidth: "500px",
     margin: "10px auto 0",
-    textAlign: "center"
+    textAlign: "center",
   },
   main: {
     background: "#FFFFF5",
     position: "relative",
-    zIndex: "3"
+    zIndex: "3",
   },
-  mainRaised: {
-    margin: "-60px 30px 0px",
-    borderRadius: "6px",
-    boxShadow:
-      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
-  }
-})
 
+  "@media (max-width: 500px)": {
+    container: {
+      width: "100vw",
+    },
+    wasParallax: {
+      backgroundSize: "1000px 99vh",
+    },
+    title: {
+      // ...title,
+      fontSize: "2rem",
+    },
+    subtitle: {
+      fontSize: "1rem",
+    },
+  },
+});
 
 export default function OutersiteSoundPage(props) {
   const classes = useStyles();
   return (
     <div>
       <div className={classes.wasParallax}>
-        <div className={classes.container}>
+        <div className={classes.headerContainer}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
               <div className={classes.brand}>
@@ -88,7 +103,7 @@ export default function OutersiteSoundPage(props) {
           </GridContainer>
         </div>
       </div>
-      <div className={classNames(classes.main)}>
+      <div className={classes.main}>
         <div className={classes.container}>
           <MeetTheBands />
         </div>

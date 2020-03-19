@@ -23,15 +23,18 @@ import ted from "assets/img/outerSite/zenith/band-members/man2.jpg";
 import jan from "assets/img/outerSite/zenith/band-members/girl.jpg";
 import man from "assets/img/outerSite/zenith/band-members/man.jpg";
 
-import landingImage from "assets/img/outerSite/zenith/zenith-banner.jpg"
+import landingImage from "assets/img/outerSite/zenith/zenith-banner.jpg";
 
 const useStyles = makeStyles({
   container,
+  root: {
+    overflowX: "hidden",
+  },
   backImage: {
     height: "99vh",
     width: "99vw",
     maxWidth: "100vw",
-    filter: "brightness(80%)"
+    filter: "brightness(80%)",
   },
   profile: {
     textAlign: "center",
@@ -39,34 +42,34 @@ const useStyles = makeStyles({
     marginTop: "110px",
   },
   zenithLogo: {
-    transform: "translate3d(0, -50%, 0)"
+    transform: "translate3d(0, -50%, 0)",
   },
   description: {
     margin: "1.071rem auto 0",
     maxWidth: "600px",
     color: "#999",
-    textAlign: "center !important"
+    textAlign: "center !important",
   },
   paragraph: {
     fontSize: "30px",
     padding: "0px 0px 20px 0px",
     color: "black",
-    lineHeight: 1.3
+    lineHeight: 1.3,
   },
   name: {
-    marginTop: "-80px"
+    marginTop: "-80px",
   },
   ...imagesStyle,
   main: {
     background: "#FFFFF5",
     position: "relative",
-    zIndex: "3"
+    zIndex: "3",
   },
   mainRaised: {
     margin: "-60px 30px 0px",
     borderRadius: "6px",
     boxShadow:
-      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
+      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)",
   },
   title: {
     ...title,
@@ -74,7 +77,7 @@ const useStyles = makeStyles({
     position: "relative",
     marginTop: "30px",
     minHeight: "32px",
-    textDecoration: "none"
+    textDecoration: "none",
   },
   socials: {
     marginTop: "0",
@@ -89,8 +92,8 @@ const useStyles = makeStyles({
     cursor: "poiner",
     transition: ".3s ease-in-out",
     "&:hover": {
-      color: "blue"
-    }
+      color: "blue",
+    },
   },
   emails: {
     marginTop: "0",
@@ -105,16 +108,52 @@ const useStyles = makeStyles({
     cursor: "poiner",
     transition: ".3s ease-in-out",
     "&:hover": {
-      color: "red"
-    }
+      color: "red",
+    },
   },
   navWrapper: {
     margin: "20px auto 50px auto",
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
+  "@media (max-width: 500px)": {
+    root: {
+      overflowX: "hidden",
+
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+    backImage: {
+      width: "900px",
+      maxWidth: "10000px",
+    },
+  },
 });
 
 export default function ZenithPage() {
+  const axios = require("axios");
+
+  const [snippet, setSnippet] = React.useState(0);
+
+  React.useEffect(() => {}, [snippet]);
+  if (snippet === 0) {
+    axios
+      .get("https://www.googleapis.com/youtube/v3/playlistItems", {
+        params: {
+          part: "snippet",
+          maxResults: 50,
+          playlistId: "PLnmIjmEVVCoWm5eNj8WlYX7xNtehfhDAA",
+          key: "AIzaSyDU9HU_OI90sHgoG0dmeZNDiMdeU7Zp6sU",
+          enableJsApi: 1,
+        },
+      })
+      .then(response => {
+        setSnippet(response.data.items);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
   const places = [
     "White City Days at Bear Park",
@@ -126,34 +165,24 @@ export default function ZenithPage() {
     "Club 48 for a benefit for cancer",
     "Many clubs in Salt Lake city",
     "Weddings",
-    "Kellogg Garden Products Corporate meeting"
-  ]
+    "Kellogg Garden Products Corporate meeting",
+  ];
 
   React.useEffect(() => {
-    window.scrollTo(0,0)
-  })
+    window.scrollTo(0, 0);
+  });
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,
     classes.imgRoundedCircle,
-    classes.imgFluid
+    classes.imgFluid,
   );
   const handleLinkClick = link => {
     window.open(link, "_blank");
   };
-  const urls = [
-    {
-      url: "https://www.youtube.com/watch?v=ClB-JQKM6So",
-      description: "Zenith performing White Rabbit"
-    }
-  ];
   return (
-    <div>
-      <img 
-        className={classes.backImage}
-        src={landingImage}
-        alt="background"
-      />
+    <div className={classes.root}>
+      <img className={classes.backImage} src={landingImage} alt="background" />
       <div className={classNames(classes.main)}>
         <div>
           <div className={classes.container}>
@@ -161,7 +190,11 @@ export default function ZenithPage() {
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
                   <div>
-                    <img src={profile} alt="..." className={`${imageClasses} ${classes.zenithLogo}`} />
+                    <img
+                      src={profile}
+                      alt="..."
+                      className={`${imageClasses} ${classes.zenithLogo}`}
+                    />
                   </div>
                   <div className={classes.name}>
                     <h3 className={classes.title}>Zenith</h3>
@@ -173,7 +206,7 @@ export default function ZenithPage() {
                       className={classes.margin5}
                       onClick={() =>
                         handleLinkClick(
-                          "https://www.facebook.com/profile.php?id=100011745003253"
+                          "https://www.facebook.com/profile.php?id=100011745003253",
                         )
                       }
                     >
@@ -223,7 +256,7 @@ export default function ZenithPage() {
               description4="Is the newest addition. He is their Flutist. He has performed with the School of Rock, playing a great Jethro Tull, and other flute based songs."
               image5={man}
             />
-            <VideoSection urls={urls} />
+            <VideoSection snippet={snippet} />
             <PlacesPerformed places={places} />
           </div>
         </div>

@@ -19,6 +19,9 @@ import landingImage from "assets/img/outerSite/moose-canoe/moose-canoe-backdrop.
 
 const useStyles = makeStyles({
   container,
+  root: {
+    overflowX: "hidden",
+  },
   backImage: {
     height: "99vh",
     width: "99vw",
@@ -105,6 +108,17 @@ const useStyles = makeStyles({
     margin: "20px auto 50px auto",
     textAlign: "center",
   },
+  "@media (max-width: 500px)": {
+    root: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+    backImage: {
+      width: "700px",
+      maxWidth: "10000px",
+    },
+  },
 });
 
 export default function MooseCanoePage() {
@@ -132,12 +146,6 @@ export default function MooseCanoePage() {
       });
   }
 
-  // curl \
-  // 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLnmIjmEVVCoWUZBcosKDgCGtiVI3zPDg3&key=[YOUR_API_KEY]' \
-  // --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
-  // --header 'Accept: application/json' \
-  // --compressed
-
   const places = [
     "White City Days at Bear Park",
     "Layton Festival",
@@ -161,7 +169,7 @@ export default function MooseCanoePage() {
   };
 
   return (
-    <div>
+    <div className={classes.root}>
       <img className={classes.backImage} src={landingImage} alt="limage" />
       <div className={classNames(classes.main)}>
         <div>

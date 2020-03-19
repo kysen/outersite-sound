@@ -5,7 +5,7 @@ import { Router, Route, Switch } from "react-router-dom";
 
 import "assets/scss/material-kit-react.scss?v=1.8.0";
 
-import Navbar from "myComponents/Navbar.js"
+import Navbar from "myComponents/Navbar.js";
 
 import OutersiteSoundPage from "views/OutersiteSoundPage/OutersiteSoundPage.js";
 import ZenithPage from "views/Bands/ZenithPage/ZenithPage.js";
@@ -21,5 +21,5 @@ ReactDOM.render(
       <Route path="/" component={OutersiteSoundPage} />
     </Switch>
   </Router>,
-  document.getElementById("root")
+  document.getElementById("root"),
 );

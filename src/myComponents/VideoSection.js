@@ -54,9 +54,7 @@ export default function VideoSection(props) {
                 height="30vw"
                 config={{
                   youtube: {
-                    playerVars: {
-                      origin: "https://www.outersitesound.com/",
-                    },
+                    enableJsApi: 1,
                   },
                 }}
               />
