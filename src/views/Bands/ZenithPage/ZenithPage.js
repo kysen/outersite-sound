@@ -199,7 +199,7 @@ export default function ZenithPage() {
                   <div className={classes.name}>
                     <h3 className={classes.title}>Zenith</h3>
                     <h4>Cover Band</h4>
-                    <h4>Do Originals</h4>
+                    <h4>Originals</h4>
                     <Button
                       justIcon
                       color="transparent"
